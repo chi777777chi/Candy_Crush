@@ -20,8 +20,21 @@ namespace game_framework {
 			play.SetTopLeft(600, 770);
 			start_loading.ToggleAnimation();
 		}
+		void Rank_choose_UI() {
+			rank_choose_map.LoadBitmapByString({ "resources/map_level2.bmp" });
+			rank_choose_map.SetTopLeft(0, 0);
+			rank_choose_arrow.LoadBitmapByString({ "resources/arrow.bmp" },RGB(255, 255, 255));
+			rank_choose_arrow.SetTopLeft(0, 0);
+			rank_1.LoadBitmapByString({ "resources/rank_1.bmp" }, RGB(255,255,255));
+			rank_1.SetTopLeft(0, 0);
+		}
 		void start_ui_show() {
 			start_loading.ShowBitmap();	
+		}
+		void rankchoose_ui_show() {
+			rank_choose_map.ShowBitmap();
+			//rank_choose_arrow.ShowBitmap();
+			rank_1.ShowBitmap();
 		}
 		bool IS_PLAY_BUTTON(CPoint point) {
 
@@ -30,10 +43,14 @@ namespace game_framework {
 		}
 	
 	private:
-		int phase_start = 1;
 		CMovingBitmap play;								// csieªºlogo
 		CMovingBitmap start_loading;
 		CMovingBitmap start_ui;
+		CMovingBitmap rank_choose_map;
+		CMovingBitmap rank_choose_arrow;
+		CMovingBitmap rank_1;
+		//map_level.ShowBitmap();
+		//map_arrow.ShowBitmap();
 	};
 }
 

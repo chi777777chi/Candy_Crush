@@ -67,6 +67,8 @@ namespace game_framework {
 	private:
 		CMovingBitmap logo;								// csie的logo
 		UI StartUI;
+		UI RankChooseUI;
+		int phase_start = 1;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
@@ -92,8 +94,7 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		Map MAP;
-		//CMovingBitmap map_level;
-		//CMovingBitmap map_arrow;
+		
 	};
 
 	/////////////////////////////////////////////////////////////////////////////

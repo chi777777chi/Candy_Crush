@@ -37,7 +37,7 @@ void CGameStateInit::OnInit()
 void CGameStateInit::OnBeginState()
 {
 	StartUI.START_UI();
-
+	RankChooseUI.Rank_choose_UI();
 }
 
 void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -47,12 +47,21 @@ void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
 {
-	if (StartUI.IS_PLAY_BUTTON(point)==true) {
-		GotoGameState(GAME_STATE_RUN);
+	if (phase_start == 1) {
+		if (StartUI.IS_PLAY_BUTTON(point) == true) {
+			phase_start += 1;
+		}
 	}
+	
 }
 
 void CGameStateInit::OnShow()
 {
-	StartUI.start_ui_show();
+	if (phase_start == 1) {
+		StartUI.start_ui_show();
+	}
+	
+	if (phase_start == 2) {
+		RankChooseUI.rankchoose_ui_show();
+	}
 }
